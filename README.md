@@ -1,33 +1,18 @@
-## Instalação
-Você pode clonar este repositório OU baixar o .zip
+# LuaBook
+A fim de colocar em prática os conhecimentos obtidos nesse período de estudos,
+uma rede social foi idealizada para utilizar todas as habilidades que possuo
 
-Ao descompactar, é necessário rodar o **composer** pra instalar as dependências e gerar o *autoload*.
+Isso inclui front-end e back-end, sem utilização de frameworks, fazendo tudo na
+raça, usando o padrão para o client-side: 
 
-Vá até a pasta do projeto, pelo *prompt/terminal* e execute:
-> composer install
+- HTML5, com foco maior na semântica
+- CSS3
+- JS, com base em ES6
 
-Depois é só aguardar.
+No lado do servidor, é utilizado php, com a arquitetura mvc, desenvolvido no padrão
+da psr-4. Também, banco de dados relacionais, o MySql. 
 
-## Configuração
-Todos os arquivos de **configuração** e aplicação estão dentro da pasta *src*.
+## Sobre
+A estrutura de pastas foi inspirada na do professor Bonieky Lacerda, apenas com algumas modificações.
 
-As configurações de Banco de Dados e URL estão no arquivo *src/Config.php*
-
-É importante configurar corretamente a constante *BASE_DIR*:
-> const BASE_DIR = '/**PastaDoProjeto**/public';
-
-## Uso
-Você deve acessar a pasta *public* do projeto.
-
-O ideal é criar um ***alias*** específico no servidor que direcione diretamente para a pasta *public*.
-
-## Modelo de MODEL
-```php
-<?php
-namespace src\models;
-use \core\Model;
-
-class Usuario extends Model {
-
-}
-```
+O nome do projeto faz referência ao meu amor <3
