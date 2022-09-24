@@ -17,6 +17,7 @@
             <input type="email" name="email" id="email" placeholder="Digite seu e-mail">
             <label for="password">Senha</label>
             <input type="password" name="password" id="password" placeholder="Digite sua senha">
+            <input type="submit" value="Fazer login">
         </form>
       
             <a href="<?=$base?>/register">Não tem conta? Cadastre-se</a>

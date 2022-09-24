@@ -12,15 +12,16 @@
         <img src="<?=$base?>/assets/images/luabook-logo.png" alt="logo luabook">
     </div>
     <section class="section-form">
-        <form action="" method="post">
+        <form action="<?=$base?>/register" method="post">
             <label for="name">Nome</label>
             <input type="text" name="name" id="name" placeholder="Digite seu nome completo">
             <label for="email">E-mail</label>
             <input type="email" name="email" id="email" placeholder="Digite seu e-mail">
-            <label for="email">Nascimento</label>
+            <label for="birthdate">Nascimento</label>
             <input type="date" name="birthdate" id="birthdate">
             <label for="password">Senha</label>
             <input type="password" name="password" id="password" placeholder="Digite sua senha">
+            <input type="submit" value="Cadastrar">
             
         </form>
       
