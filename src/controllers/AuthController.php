@@ -11,6 +11,10 @@ class AuthController extends Controller {
         $this->render('login');
     }
 
+    public function register(){
+        $this->render('register');
+    }
+
   
 
 }
