@@ -24,9 +24,16 @@ class AuthController extends Controller {
         $password = filter_input(INPUT_POST,'password');
 
         if($name && $email && $birthdate && $password){
-            if(User::emailExists($email)){
-                echo 'entrou';
+            $u = new User();
+            if($u->emailExists($email)){
+
+                $hash = password_hash($password,PASSWORD_DEFAULT);
+
+                $u->insertUser($name,$email,$birthdate,$hash);
             
+            } else{
+                $_SESSION['flash'] = 'E-mail já cadastrado';
+                $this->redirect('/register');
             }
             
         } else{
