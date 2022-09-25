@@ -15,7 +15,7 @@ class User extends Model
         $stm->execute();
 
         if ($stm->rowCount() === 0) {
-            $data = $stm->fetch(PDO::FETCH_ASSOC);
+
             return true;
         }
 
@@ -41,13 +41,17 @@ class User extends Model
     public function checkLogin($email, $password)
     {
 
-        $user = $this->emailExists($email);
-        var_dump($user);
-        if ($user) {
-            if (password_verify($user['password'], $password)) {
-                return 'oi';
+        $stm = $this->con->prepare('SELECT * FROM users WHERE email = :email');
+        $stm->bindValue(':email',$email);
+        $stm->execute();
+        
+        $array = $stm->fetch(PDO::FETCH_ASSOC);
+
+        if ($email === $array['email']) {
+            if (password_verify($array['password'], $password)) {
+                return true;
             } else {
-                return 'nao vim';
+                return false;
             }
         }
     }

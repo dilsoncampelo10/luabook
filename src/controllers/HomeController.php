@@ -26,9 +26,10 @@ class HomeController extends Controller
         $this->render('home', ['nome' => 'Bonieky']);
     }
 
-    public function sobre()
+    public function logout()
     {
-        $this->render('sobre');
+        session_destroy();
+        $this->redirect('/login');
     }
 
     public function sobreP($args)

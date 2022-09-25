@@ -4,6 +4,7 @@ use core\Router;
 $router = new Router();
 
 $router->get('/', 'HomeController@index');
+$router->get('/sair','HomeController@logout');
 
 $router->get('/login','AuthController@login');
 
