@@ -56,7 +56,7 @@ class AuthController extends Controller
         if ($email && $password) {
             $u = new User();
             $_SESSION['auth'] = $u->checkLogin($email, $password);
-            echo $u->checkLogin($email, $password); exit;
+            
             $this->redirect('/');
         } else {
             $this->redirect('/login');

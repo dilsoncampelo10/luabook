@@ -47,8 +47,10 @@ class User extends Model
         
         $array = $stm->fetch(PDO::FETCH_ASSOC);
 
+    
         if ($email === $array['email']) {
-            if (password_verify($array['password'], $password)) {
+           
+            if (password_verify($password,$array['password'])) {
                 return true;
             } else {
                 return false;
