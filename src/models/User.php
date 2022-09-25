@@ -83,7 +83,6 @@ class User extends Model
         
         $stm = $this->con->prepare('SELECT * FROM users WHERE id = :id');
         $stm->bindValue(':id',$id);
-       
         $stm->execute();
 
         if ($stm->rowCount() > 0) {
@@ -98,5 +97,29 @@ class User extends Model
         }
 
         return false;
+    }
+
+    public function getWLimit($limit){
+        $stm = $this->con->query('SELECT * FROM users LIMIT '.$limit);
+       // $stm->bindValue(':limit',$limit);
+      //  $stm->execute();
+     //   echo 'SELECT * FROM users LIMIT '.$limit;
+        $dataUser = [];
+        if($stm->rowCount()>0){
+            $data = $stm->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($data as $d) {
+                $u = new UserDao();
+    
+                $u->setId($d['id']);
+                $u->setName($d['name']);
+                $u->setEmail($d['email']);
+                $u->setBirthdate($d['birthdate']);
+    
+                array_push($dataUser, $u);
+            }
+            
+        }
+
+        return $dataUser;
     }
 }

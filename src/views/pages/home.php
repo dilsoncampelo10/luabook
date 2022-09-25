@@ -1,20 +1,20 @@
-<?php $render('header',['user'=>$user]); ?>
+<?php $render('header', ['user' => $user]); ?>
 
 <section class="content-main">
     <div>
-        Horizonal
+        Horizontal e mais coisas
     </div>
     <div>
-        <form action="">
+        <form action="" method="post">
             <img src="<?= $base ?>/assets/images/user.png" alt="perfil">
-            <textarea name="post" class="feed-editor" placeholder="O que você está pensando, <?=$user->getName()?>? "></textarea>
+            <textarea name="post" class="feed-editor" placeholder="O que você está pensando, <?= $user->getName() ?>? "></textarea>
             <input type="submit" value="Confirmar">
         </form>
         <div class="post">
             <div class="container">
                 <div class="post-header">
                     <img src="<?= $base ?>/assets/images/user.png" alt="perfil">
-                    <span><?= $user->getName() ?></span> <span>Fez um post</span> <span><?=$user->getBirthdate()?></span>
+                    <span><?= $user->getName() ?></span> <span>Fez um post</span> <span><?= $user->getBirthdate() ?></span>
                 </div>
                 <div class="content-post">
                     Aqui vem o conteúdo
@@ -31,7 +31,10 @@
             </div>
         </div>
     </div>
-    <div>
-        Sugestões
-    </div>
+    <aside class="suggestions">
+        <h3>Sujestões</h3> <br>
+        <?php foreach ($friends as $f) : ?>
+            <p><?= $f->getName() ?> <a href="">Seguir</a> </p>
+        <?php endforeach ?>
+    </aside>
 </section>

@@ -152,3 +152,22 @@ body{
     margin-left: 10px;
     width: 85%;
 }
+
+/*Suggestions*/
+
+.suggestions{
+    background-color: var(--primary);
+    padding: 20px;
+    width: 250px;
+    color: white;
+}
+.suggestions a{
+    color: white;
+    text-decoration: none;
+}
+.suggestions p{
+    display: flex;
+    margin-left: 10px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}

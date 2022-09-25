@@ -26,11 +26,11 @@ class HomeController extends Controller
     {
         $users = new User();
 
-        
-        
         $data = $users->getById($_SESSION['auth']);
+
+        $friends = $users->getWLimit(5);
      
-        $this->render('home', ['user' => $data]);
+        $this->render('home', ['user' => $data,'friends'=>$friends]);
     }
 
     public function logout()
