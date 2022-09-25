@@ -35,9 +35,8 @@ class AuthController extends Controller
                 $hash = password_hash($password, PASSWORD_DEFAULT);
 
                 $_SESSION['auth'] = $u->insertUser($name, $email, $birthdate, $hash);
-                
+
                 $this->redirect('/');
-                
             } else {
                 $_SESSION['flash'] = 'E-mail já cadastrado';
                 $this->redirect('/register');
@@ -56,7 +55,7 @@ class AuthController extends Controller
         if ($email && $password) {
             $u = new User();
             $_SESSION['auth'] = $u->checkLogin($email, $password);
-            
+
             $this->redirect('/');
         } else {
             $this->redirect('/login');
