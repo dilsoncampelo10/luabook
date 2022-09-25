@@ -25,8 +25,12 @@ class HomeController extends Controller
     public function index()
     {
         $users = new User();
-        $data = $users->getAll();
-        $this->render('home', ['nome' => 'Bonieky']);
+
+        
+        
+        $data = $users->getById($_SESSION['auth']);
+     
+        $this->render('home', ['user' => $data]);
     }
 
     public function logout()

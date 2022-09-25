@@ -1,4 +1,4 @@
-<?php $render('header'); ?>
+<?php $render('header',['user'=>$user]); ?>
 
 <section class="content-main">
     <div>
@@ -7,14 +7,14 @@
     <div>
         <form action="">
             <img src="<?= $base ?>/assets/images/user.png" alt="perfil">
-            <textarea name="post" class="feed-editor" placeholder="O que você está pensando, Lígia Bianca? "></textarea>
+            <textarea name="post" class="feed-editor" placeholder="O que você está pensando, <?=$user->getName()?>? "></textarea>
             <input type="submit" value="Confirmar">
         </form>
         <div class="post">
             <div class="container">
                 <div class="post-header">
                     <img src="<?= $base ?>/assets/images/user.png" alt="perfil">
-                    <span>Lígia Bianca</span> <span>Fez um post</span> <span>25/09/2022</span>
+                    <span><?= $user->getName() ?></span> <span>Fez um post</span> <span><?=$user->getBirthdate()?></span>
                 </div>
                 <div class="content-post">
                     Aqui vem o conteúdo

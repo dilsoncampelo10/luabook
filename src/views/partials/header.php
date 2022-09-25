@@ -19,7 +19,7 @@
         </div>
         <ul class="navbar-content">
             <li><a href="">Perfil</a></li>
-            <li><a href=""><img src="<?=$base?>/assets/images/user.png" alt="perfil"> Lígia Bianca</a></li>
+            <li><a href=""><img src="<?=$base?>/assets/images/user.png" alt="perfil"> <?=$user->getName()?></a></li>
             <li><a href="<?=$base?>/sair">Sair</a></li>
         </ul>
     </nav>
