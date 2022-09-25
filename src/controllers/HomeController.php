@@ -1,32 +1,38 @@
 <?php
+
 namespace src\controllers;
 
 use \core\Controller;
 use \src\models\Auth;
 
-class HomeController extends Controller {
+class HomeController extends Controller
+{
 
     public function __construct()
     {
+
         $user = Auth::checkSession();
 
-        if($user){
-            $this->redirect('/home');
+       
+        if (!$user) {
+            $this->redirect('/login');
         }
 
-        $this->redirect('/login');
+      
     }
 
-    public function index() {
+    public function index()
+    {
         $this->render('home', ['nome' => 'Bonieky']);
     }
 
-    public function sobre() {
+    public function sobre()
+    {
         $this->render('sobre');
     }
 
-    public function sobreP($args) {
+    public function sobreP($args)
+    {
         print_r($args);
     }
-
 }
