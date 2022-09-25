@@ -4,6 +4,7 @@ namespace src\controllers;
 
 use \core\Controller;
 use \src\models\Auth;
+use src\models\User;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,8 @@ class HomeController extends Controller
 
     public function index()
     {
+        $users = new User();
+        $data = $users->getAll();
         $this->render('home', ['nome' => 'Bonieky']);
     }
 

@@ -3,6 +3,7 @@
 namespace src\models;
 
 use \core\Model;
+use \src\dao\UserDao;
 use PDO;
 
 class User extends Model
@@ -42,19 +43,37 @@ class User extends Model
     {
 
         $stm = $this->con->prepare('SELECT * FROM users WHERE email = :email');
-        $stm->bindValue(':email',$email);
+        $stm->bindValue(':email', $email);
         $stm->execute();
-        
+
         $array = $stm->fetch(PDO::FETCH_ASSOC);
 
-    
+
         if ($email === $array['email']) {
-           
-            if (password_verify($password,$array['password'])) {
+
+            if (password_verify($password, $array['password'])) {
                 return true;
             } else {
                 return false;
             }
         }
+    }
+
+    public function getAll()
+    {
+        $stm = $this->con->query('SELECT * FROM users');
+        $dataUser = [];
+        $data = $stm->fetchAll();
+        foreach($data as $d){
+            $u = new UserDao();
+
+            $u->setName($d['name']);
+            $u->setEmail($d['email']);
+            $u->setBirthdate($d['birthdate']);
+            
+            array_push($dataUser,$u);
+        }
+
+        return $u;
     }
 }
