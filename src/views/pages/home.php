@@ -1,8 +1,15 @@
 <?php $render('header', ['user' => $user]); ?>
 
 <section class="content-main">
-    <div>
-        Horizontal e mais coisas
+    <div class="navbar-vertical">
+        <nav>
+            <ul>
+                <li><a href="<?= $base ?>">Página principal</a></li>
+                <li><a href="<?=$base?>/perfil">Perfil</a></li>
+                <li><a href="<?=$base?>/amigos">Amigos</a></li>
+                <li><a href="<?=$base?>/configuracoes">Configurações</a></li>
+            </ul>
+        </nav>
     </div>
     <div>
         <form action="" method="post">
