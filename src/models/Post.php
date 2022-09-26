@@ -20,7 +20,7 @@ class Post extends Model
     public function getAll()
     {
         $dataPosts = [];
-        $stm = $this->con->query('SELECT * FROM posts');
+        $stm = $this->con->query('SELECT * FROM posts ORDER BY created_at DESC');
         if ($stm->rowCount() > 0) {
             $data = $stm->fetchAll();
             foreach ($data as $d) {

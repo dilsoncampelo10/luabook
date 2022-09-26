@@ -30,7 +30,7 @@ class PostDao
     }
     public function setCreatedAt($c)
     {
-        $this->created_at = $c;
+        $this->createdAt = $c;
     }
     public function getCreatedAt()
     {

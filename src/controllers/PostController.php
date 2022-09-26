@@ -40,6 +40,8 @@ class PostController extends Controller
 
             $this->redirect('/');
         }
+
+        $this->redirect('/');
     }
 
 
