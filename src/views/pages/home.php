@@ -12,13 +12,13 @@
         </nav>
     </div>
     <div>
-        <form action="" method="post">
+        <form action="<?= $base ?>/post" method="post">
             <img src="<?= $base ?>/assets/images/user.png" alt="perfil">
             <textarea name="post" class="feed-editor" placeholder="O que você está pensando, <?= $user->getName() ?>? "></textarea>
             <button type="submit">Enviar<i class="fa-sharp fa-solid fa-paper-plane-top"></i></button>
         </form>
         <div class="post">
-       
+
             <div class="container">
                 <div class="post-header">
                     <img src="<?= $base ?>/assets/images/user.png" alt="perfil">

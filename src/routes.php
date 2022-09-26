@@ -14,5 +14,7 @@ $router->get('/register','AuthController@register');
 
 $router->post('/register','AuthController@registerAction');
 
+$router->post('/post','PostController@addPost');
+
 // $router->get('/sobre/{nome}', 'HomeController@sobreP');
 // $router->get('/sobre', 'HomeController@sobre');
