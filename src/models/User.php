@@ -99,11 +99,12 @@ class User extends Model
         return false;
     }
 
-    public function getWLimit($limit){
-        $stm = $this->con->query('SELECT * FROM users LIMIT '.$limit);
-       // $stm->bindValue(':limit',$limit);
-      //  $stm->execute();
-     //   echo 'SELECT * FROM users LIMIT '.$limit;
+    public function getWLimit($limit,$id){
+        $stm = $this->con->prepare('SELECT * FROM users WHERE id <> :id LIMIT '.$limit);
+        $stm->bindValue(':id',$id);
+        //echo 'SELECT * FROM users WHERE id <> '.$id.' LIMIT '.$limit;
+        $stm->execute();
+     
         $dataUser = [];
         if($stm->rowCount()>0){
             $data = $stm->fetchAll(PDO::FETCH_ASSOC);

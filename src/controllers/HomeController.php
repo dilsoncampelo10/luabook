@@ -28,7 +28,7 @@ class HomeController extends Controller
 
         $data = $users->getById($_SESSION['auth']);
 
-        $friends = $users->getWLimit(5);
+        $friends = $users->getWLimit(5,$_SESSION['auth']);
      
         $this->render('home', ['user' => $data,'friends'=>$friends]);
     }

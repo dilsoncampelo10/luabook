@@ -5,9 +5,9 @@
         <nav>
             <ul>
                 <li><a href="<?= $base ?>">Página principal</a></li>
-                <li><a href="<?=$base?>/perfil">Perfil</a></li>
-                <li><a href="<?=$base?>/amigos">Amigos</a></li>
-                <li><a href="<?=$base?>/configuracoes">Configurações</a></li>
+                <li><a href="<?= $base ?>/perfil">Perfil</a></li>
+                <li><a href="<?= $base ?>/amigos">Amigos</a></li>
+                <li><a href="<?= $base ?>/configuracoes">Configurações</a></li>
             </ul>
         </nav>
     </div>
@@ -15,9 +15,10 @@
         <form action="" method="post">
             <img src="<?= $base ?>/assets/images/user.png" alt="perfil">
             <textarea name="post" class="feed-editor" placeholder="O que você está pensando, <?= $user->getName() ?>? "></textarea>
-            <input type="submit" value="Confirmar">
+            <button type="submit">Enviar<i class="fa-sharp fa-solid fa-paper-plane-top"></i></button>
         </form>
         <div class="post">
+       
             <div class="container">
                 <div class="post-header">
                     <img src="<?= $base ?>/assets/images/user.png" alt="perfil">
@@ -45,3 +46,4 @@
         <?php endforeach ?>
     </aside>
 </section>
+<?= $render('footer'); ?>
